@@ -1,4 +1,6 @@
-import os, datasets, json
+import os, sys, datasets, json
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 from utils.metrics import compute_metrics_for_dual as compute_metrics
 from utils.metrics import convert_to_serializable

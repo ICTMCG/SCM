@@ -1,6 +1,9 @@
 import torch
 import torch.nn as nn
 from transformers import Qwen2PreTrainedModel, Qwen2Model
+import sys, os
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.logic_consistency_loss import LogicConsistencyLoss
 
 

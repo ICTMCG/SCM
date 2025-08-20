@@ -1,4 +1,6 @@
-import os, datasets, json
+import os, sys, datasets, json
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 from argparse import ArgumentParser
 from transformers import (

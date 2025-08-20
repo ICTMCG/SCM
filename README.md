@@ -8,7 +8,7 @@
 
 <!-- [Chinese Blog]() -->
 
-<img src="SCM.png" width="50%">
+<img src="SCM.png" width="100%">
 
 ## 1\. Prerequisites
 

@@ -1,4 +1,6 @@
 import datetime, sys, os, datasets, torch, random
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import numpy as np
 from argparse import ArgumentParser
 from transformers import (
