@@ -1,4 +1,5 @@
-import tokenizations, jsonlines, json, os
+import jsonlines, json, os
+import spacy_alignments as tokenizations
 from tqdm import tqdm
 from transformers import AutoTokenizer
 from argparse import ArgumentParser
