@@ -18,6 +18,7 @@ Before you begin, ensure you have the following installed:
 - CUDA: 11.8
 - PyTorch: 2.5.1
 - hf-mtask-trainer: 0.0.5
+- pytokenizations: 0.8.4
 
 You can often install Python dependencies using:
 
