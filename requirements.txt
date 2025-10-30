@@ -165,4 +165,4 @@ xxhash==3.5.0
 yacs==0.1.8
 yarg==0.1.9
 yarl==1.20.0
-pytokenizations==0.8.4
+spacy_alignment==0.9.2
