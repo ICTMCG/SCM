@@ -63,6 +63,7 @@ def parse_config(args):
     config.beta = 1 - args.alpha
     config.gamma = args.gamma
     config.logic_reduce = args.logic_reduce
+    config.ignore_index = -100
     return config
 
 
