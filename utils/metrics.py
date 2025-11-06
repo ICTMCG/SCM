@@ -122,7 +122,7 @@ def compute_metrics_for_dual(
 
 
 def compute_metrics_for_seq(
-    pred: Prediction,
+    pred,
     sequence_threshold=0.5,
 ):
     sequence_scores = pred.predictions
