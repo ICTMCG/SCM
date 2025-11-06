@@ -72,8 +72,7 @@ sequence_labels = predictions.label_ids
 for threshold in [0.5, 0.6, 0.7, 0.8, 0.9]:
 
     results = compute_metrics(
-        sequence_predictions,
-        sequence_labels,
+        predictions,
         threshold,
     )
 

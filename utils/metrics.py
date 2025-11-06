@@ -1,6 +1,12 @@
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
 import numpy as np
 import torch
+from dataclasses import dataclass
+
+@dataclass
+class Prediction:
+    predictions: tuple
+    label_ids: tuple
 
 
 def get_metrics(y_true, y_pred):
@@ -69,13 +75,13 @@ def get_result_dict(labels, scores, threshold, prefix=""):
 
 
 def compute_metrics_for_dual(
-    token_scores,
-    sequence_scores,
-    token_labels,
-    sequence_labels,
+    pred,
     token_threshold=0.5,
     sequence_threshold=0.5,
 ):
+    token_scores, sequence_scores = pred.predictions
+    token_labels, sequence_labels = pred.label_ids
+
     token_scores_ori = (
         torch.nn.functional.softmax(torch.from_numpy(token_scores).float(), dim=-1)[
             :, :, -1
@@ -116,10 +122,12 @@ def compute_metrics_for_dual(
 
 
 def compute_metrics_for_seq(
-    sequence_scores,
-    sequence_labels,
+    pred: Prediction,
     sequence_threshold=0.5,
 ):
+    sequence_scores = pred.predictions
+    sequence_labels = pred.label_ids
+
     sequence_scores = (
         torch.nn.functional.softmax(torch.from_numpy(sequence_scores).float(), dim=-1)[
             :, -1

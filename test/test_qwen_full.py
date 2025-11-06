@@ -103,10 +103,7 @@ for threshold in [0.5, 0.6, 0.7, 0.8, 0.9]:
     token_threshold = threshold
 
     results = compute_metrics(
-        token_predictions,
-        sequence_predictions,
-        token_labels,
-        sequence_labels,
+        predictions,
         token_threshold,
         sequence_threshold,
     )

@@ -13,6 +13,7 @@ from transformers import (
 from model.ModernBertForSeqCLF import ModernBERTForSequenceClassification
 from utils.metrics import compute_metrics_for_dual as compute_metrics
 from utils.metrics import convert_to_serializable
+from utils.metrics import Prediction
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 torch.cuda.empty_cache()
@@ -135,14 +136,13 @@ print(collect_token_scores.shape, collect_token_labels.shape)
 sequence_labels = np.ones_like(np.array(collect_sequence_labels))
 sequence_scores = np.ones((sequence_labels.shape[0], 2))
 
+predictions = Prediction(predictions=(collect_token_scores, sequence_scores), label_ids=(collect_token_labels, sequence_labels))
+
 for threshold in [0.5, 0.6, 0.7, 0.8, 0.9]:
     token_threshold = threshold
 
     results = compute_metrics(
-        collect_token_scores,
-        sequence_scores,
-        collect_token_labels,
-        sequence_labels,
+        predictions,
         token_threshold,
         0.5,
     )
