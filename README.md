@@ -176,10 +176,15 @@ This section provides the commands to reproduce the results for each model.
 If you use this code in your research, please consider citing:
 
 ```
-@article{li2025judgment,
-  title={From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring},
-  author={Li, Yang and Sheng, Qiang and Yang, Yehan and Zhang, Xueyao and Cao, Juan},
-  journal={arXiv preprint arXiv:2506.09996},
-  year={2025}
+@inproceedings{NEURIPS2025_4e315702,
+  author = {Li, Yang and Sheng, Qiang and Yang, Yehan and Zhang, Xueyao and Cao, Juan},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor = {D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen},
+  pages = {54305--54333},
+  publisher = {Curran Associates, Inc.},
+  title = {From Judgment to Interference: Early Stopping LLM Harmful Outputs via Streaming Content Monitoring},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2025/file/4e3157021c5f833bb2204081f1dda573-Paper-Conference.pdf},
+  volume = {38},
+  year = {2025}
 }
 ```
